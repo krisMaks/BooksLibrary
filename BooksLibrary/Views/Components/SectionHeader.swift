@@ -9,7 +9,7 @@ import UIKit
 
 class SectionHeader: UICollectionReusableView {
     static let reuseID = "SectionHeader"
-    let title = UILabel(text: "", font: FontsLibrary.label)
+    let title = UILabel(text: "", font: FontsLibrary.label, alignment: .left)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -15,7 +15,8 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = registerView
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "background")
+        navigationController?.navigationBar.tintColor = UIColor(named: "textColor")
         addActions()
     }
 
@@ -27,21 +28,18 @@ class RegisterViewController: UIViewController {
                   let surname = self.registerView.surnameTF.text,
                   let middleName = self.registerView.middleNameTF.text,
                   let userType = self.registerView.segmentControl.titleForSegment(at: self.registerView.segmentControl.selectedSegmentIndex) else { return }
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let e = error {
-                    self.errorAuthAlert(with: e.localizedDescription)
-                } else {
-                    self.db.collection("users").addDocument(data: ["name" : name,
-                                                                   "surname": surname,
-                                                                   "middleName": middleName,
-                                                                   "email": email,
-                                                                   "userType": userType]) { error in
-                        if let e = error {
-                            self.errorAuthAlert(with: e.localizedDescription)
-                        } else {
-                            self.succesAuthAlert()
-                        }
-                    }
+            AuthService.shared.signUp(lastName: surname,
+                                      name: name,
+                                      middleName: middleName,
+                                      userType: userType,
+                                      email: email,
+                                      password: password) { dbResult in
+                
+                switch dbResult{
+                case .success(let user):
+                    self.succesAuthAlert(with: user.email!)
+                case .failure(let error):
+                    self.errorAuthAlert(with: error.localizedDescription)
                 }
             }
         }

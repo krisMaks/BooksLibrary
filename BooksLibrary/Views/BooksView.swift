@@ -11,6 +11,7 @@ class BooksView: UIView {
 
     let collectionView: UICollectionView!
     static let sections = [popularBooks, books]
+    let logOutButton = UIButton(text: "Log Out", font: FontsLibrary.button)
     
     init() {
         collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: BooksView.createLayout())
@@ -24,6 +25,8 @@ class BooksView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         addSubview(collectionView)
+        collectionView.addSubview(logOutButton)
+        logOutButton.pin.right(collectionView.pin.safeArea.right - 20).sizeToFit()
         collectionView.pin.all()
     }
     

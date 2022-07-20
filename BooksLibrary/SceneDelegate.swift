@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,11 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let startVC = StartViewController()
         let navController = UINavigationController()
-        navController.pushViewController(startVC, animated: true)
-        
+        if Auth.auth().currentUser != nil {
+            navController.pushViewController(TabBarController(), animated: true)
+        } else {
+            navController.pushViewController(startVC, animated: true)
+        }
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = startVC.navigationController
+        window?.rootViewController = navController
         window?.windowScene = scene
     }
 

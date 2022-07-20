@@ -11,44 +11,96 @@ import PinLayout
 
 class RegisterView: UIView {
 
+    private struct Metrix {
+        static let widthTextField: CGFloat = 300
+        static let heightTextField: CGFloat = 44
+        static let widthButton: CGFloat = 150
+        static let marginTop: CGFloat = 10
+    }
+    
     let nameTF = UITextField(placeholder: "Your name")
     let surnameTF = UITextField(placeholder: "Your last name")
     let middleNameTF = UITextField(placeholder: "Your middle name")
-    let segmentControl = UISegmentedControl()
-    let imageLogo = UIImageView(image: UIImage(named: "BOOKS"))
-    let registerLabel = UILabel(text: "User registration:", font: FontsLibrary.label)
+    let segmentControl = UISegmentedControl(UserType.Reader.rawValue, UserType.Librarian.rawValue)
+    let imageLogo = UIImageView(image: UIImage(named: "book"))
+    let registerLabel = UILabel(text: "User registration:", font: FontsLibrary.label, alignment: .center)
     let registerButton = UIButton(text: "Register", font: FontsLibrary.button)
     let emailTF = UITextField(placeholder: "Mailbox name")
     let passwordTF = UITextField(placeholder: "Password")
     
     init() {
         super.init(frame: CGRect())
-        setViews()
+        passwordTF.isSecureTextEntry = true
+        segmentControl.selectedSegmentIndex = 0
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         let views = [imageLogo, registerLabel, nameTF, surnameTF, middleNameTF, segmentControl, emailTF, passwordTF, registerButton]
         for view in views {
-            addSubview(view)
+            if let tf = view as? UITextField {
+                tf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
+                tf.leftViewMode = .always
+                addSubview(tf)
+            } else {
+                addSubview(view)
+            }
         }
-        imageLogo.pin.topCenter(pin.safeArea.top + 10).width(40%).aspectRatio()
-        registerLabel.pin.topCenter(to: imageLogo.anchor.bottomCenter).marginTop(10).sizeToFit()
-        surnameTF.pin.topCenter(to: registerLabel.anchor.bottomCenter).marginTop(20).width(300).height(30)
-        nameTF.pin.topCenter(to: surnameTF.anchor.bottomCenter).marginTop(10).width(300).height(30)
-        middleNameTF.pin.topCenter(to: nameTF.anchor.bottomCenter).marginTop(10).width(300).height(30)
-        segmentControl.pin.topCenter(to: middleNameTF.anchor.bottomCenter).marginTop(10).width(300).height(30)
-        emailTF.pin.topCenter(to: segmentControl.anchor.bottomCenter).marginTop(10).width(300).height(30)
-        passwordTF.pin.topCenter(to: emailTF.anchor.bottomCenter).marginTop(10).width(300).height(30)
-        registerButton.pin.topCenter(to: passwordTF.anchor.bottomCenter).marginTop(20).sizeToFit()
+        imageLogo.pin
+            .hCenter()
+            .top(pin.safeArea.top + Metrix.marginTop)
+            .width(40%)
+            .aspectRatio()
+        registerLabel.pin
+            .below(of: imageLogo)
+            .hCenter()
+            .marginTop(Metrix.marginTop)
+            .width(Metrix.widthTextField)
+            .height(Metrix.heightTextField)
+        surnameTF.pin
+            .below(of: registerLabel)
+            .hCenter()
+            .marginTop(Metrix.marginTop)
+            .width(Metrix.widthTextField)
+            .height(Metrix.heightTextField)
+        nameTF.pin
+            .below(of: surnameTF)
+            .hCenter()
+            .marginTop(Metrix.marginTop)
+            .width(Metrix.widthTextField)
+            .height(Metrix.heightTextField)
+        middleNameTF.pin
+            .below(of: nameTF)
+            .hCenter()
+            .marginTop(Metrix.marginTop)
+            .width(Metrix.widthTextField)
+            .height(Metrix.heightTextField)
+        segmentControl.pin
+            .below(of: middleNameTF)
+            .hCenter()
+            .marginTop(20)
+            .width(Metrix.widthTextField)
+            .height(Metrix.heightTextField)
+        emailTF.pin
+            .below(of: segmentControl)
+            .hCenter()
+            .marginTop(20)
+            .width(Metrix.widthTextField)
+            .height(Metrix.heightTextField)
+        passwordTF.pin
+            .below(of: emailTF)
+            .hCenter()
+            .marginTop(Metrix.marginTop)
+            .width(Metrix.widthTextField)
+            .height(Metrix.heightTextField)
+        registerButton.pin
+            .below(of: passwordTF)
+            .hCenter()
+            .marginTop(20)
+            .width(Metrix.widthButton)
+            .height(Metrix.heightTextField)
     }
-    
-    func setViews() {
-        segmentControl.insertSegment(withTitle: "Reader", at: 0, animated: true)
-        segmentControl.insertSegment(withTitle: "Librarian", at: 1, animated: true)
-        segmentControl.selectedSegmentIndex = 0
-    }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

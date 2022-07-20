@@ -11,11 +11,12 @@ import Firebase
 class StartViewController: UIViewController {
 
     let startView = StartView()
+    let presentPageView = PresentPageViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view = startView
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "background")
         addActions()
     }
 
@@ -35,13 +36,13 @@ class StartViewController: UIViewController {
                 } else {
                     let tb = TabBarController()
                     self.navigationController?.pushViewController(tb, animated: true)
+                    self.presentPageView.modalPresentationStyle = .fullScreen
+                    self.present(self.presentPageView, animated: true)
+                    
                 }
             }
         }
         startView.loginButton.addAction(loginUser, for: .touchUpInside)
     }
-
-    
-    
 }
 

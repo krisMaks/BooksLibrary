@@ -19,14 +19,26 @@ class BooksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = booksView
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "background")
         booksView.collectionView.delegate = self
         booksView.collectionView.dataSource = self
         navigationItem.rightBarButtonItem = plus
         title = "Books"
+        addActionLogOut()
         
     }
     
+    func addActionLogOut() {
+        let action = UIAction { _ in
+            do {
+                try Auth.auth().signOut()
+                self.navigationController?.popToRootViewController(animated: true)
+            } catch(let error) {
+                print(error.localizedDescription)
+            }
+        }
+        booksView.logOutButton.addAction(action, for: .touchUpInside)
+    }
 
     
     

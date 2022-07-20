@@ -17,8 +17,8 @@ extension RegisterViewController {
         present(alert, animated: true)
     }
     
-    func succesAuthAlert() {
-        let alert = UIAlertController(title: "Authorization complete", message: nil, preferredStyle: .alert)
+    func succesAuthAlert(with email: String) {
+        let alert = UIAlertController(title: "Authorization with \(email) complete", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel) { _ in
             self.navigationController?.popToRootViewController(animated: true)
         }

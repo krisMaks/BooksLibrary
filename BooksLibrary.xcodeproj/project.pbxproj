@@ -26,6 +26,15 @@
 		AFAEABBE27D7779400496500 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFAEABBD27D7779400496500 /* GoogleService-Info.plist */; };
 		AFAEABC027D7807E00496500 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAEABBF27D7807E00496500 /* Alerts.swift */; };
 		AFAEABC427D79B5400496500 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAEABC327D79B5400496500 /* AuthError.swift */; };
+		AFCFC0AD2875EBE400B01C13 /* PresentContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0AC2875EBE400B01C13 /* PresentContentViewController.swift */; };
+		AFCFC0AF2875EC9800B01C13 /* PresentContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0AE2875EC9800B01C13 /* PresentContentView.swift */; };
+		AFCFC0B12875FEA900B01C13 /* PresentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0B02875FEA900B01C13 /* PresentPageViewController.swift */; };
+		AFCFC0B32875FF5400B01C13 /* StringsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0B22875FF5400B01C13 /* StringsLibrary.swift */; };
+		AFCFC0B62878238C00B01C13 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0B52878238C00B01C13 /* AuthService.swift */; };
+		AFCFC0B82878254300B01C13 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0B72878254300B01C13 /* UserType.swift */; };
+		AFCFC0BA2878279900B01C13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0B92878279900B01C13 /* User.swift */; };
+		AFCFC0BC28782F3100B01C13 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0BB28782F3100B01C13 /* DatabaseService.swift */; };
+		AFCFC0BE28875F7600B01C13 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFC0BD28875F7500B01C13 /* SegmentedControl.swift */; };
 		AFD81CDC27D905E200682D74 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD81CDB27D905E200682D74 /* BooksView.swift */; };
 		AFD81CDF27D907DE00682D74 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD81CDE27D907DE00682D74 /* BookCell.swift */; };
 		AFD81CE127D90A6E00682D74 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD81CE027D90A6E00682D74 /* BooksViewController.swift */; };
@@ -56,6 +65,15 @@
 		AFAEABBD27D7779400496500 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFAEABBF27D7807E00496500 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		AFAEABC327D79B5400496500 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		AFCFC0AC2875EBE400B01C13 /* PresentContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentContentViewController.swift; sourceTree = "<group>"; };
+		AFCFC0AE2875EC9800B01C13 /* PresentContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentContentView.swift; sourceTree = "<group>"; };
+		AFCFC0B02875FEA900B01C13 /* PresentPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentPageViewController.swift; sourceTree = "<group>"; };
+		AFCFC0B22875FF5400B01C13 /* StringsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsLibrary.swift; sourceTree = "<group>"; };
+		AFCFC0B52878238C00B01C13 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		AFCFC0B72878254300B01C13 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		AFCFC0B92878279900B01C13 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AFCFC0BB28782F3100B01C13 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		AFCFC0BD28875F7500B01C13 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		AFD81CDB27D905E200682D74 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		AFD81CDE27D907DE00682D74 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		AFD81CE027D90A6E00682D74 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +119,7 @@
 		AFAEAB9227D513B800496500 /* BooksLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				AFCFC0B42878234800B01C13 /* Services */,
 				AFD81CE627D9171E00682D74 /* file.json */,
 				AFAEABAE27D51B0300496500 /* Extensions */,
 				AFAEABA927D51A3C00496500 /* Models */,
@@ -124,6 +143,8 @@
 				AFAEABAA27D51A7C00496500 /* TabBarController.swift */,
 				AFAEABBB27D7732300496500 /* RegisterViewController.swift */,
 				AFD81CE027D90A6E00682D74 /* BooksViewController.swift */,
+				AFCFC0AC2875EBE400B01C13 /* PresentContentViewController.swift */,
+				AFCFC0B02875FEA900B01C13 /* PresentPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -135,6 +156,7 @@
 				AFAEABAC27D51AE600496500 /* StartView.swift */,
 				AFAEABB927D770F900496500 /* RegisterView.swift */,
 				AFD81CDB27D905E200682D74 /* BooksView.swift */,
+				AFCFC0AE2875EC9800B01C13 /* PresentContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +166,8 @@
 			children = (
 				AFD81CE227D90EC700682D74 /* BookModel.swift */,
 				AFD81CE427D90F8B00682D74 /* BookNetManager.swift */,
+				AFCFC0B72878254300B01C13 /* UserType.swift */,
+				AFCFC0B92878279900B01C13 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,8 +182,19 @@
 				AFAEABB727D52E4600496500 /* Label.swift */,
 				AFAEABBF27D7807E00496500 /* Alerts.swift */,
 				AFAEABC327D79B5400496500 /* AuthError.swift */,
+				AFCFC0B22875FF5400B01C13 /* StringsLibrary.swift */,
+				AFCFC0BD28875F7500B01C13 /* SegmentedControl.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AFCFC0B42878234800B01C13 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AFCFC0B52878238C00B01C13 /* AuthService.swift */,
+				AFCFC0BB28782F3100B01C13 /* DatabaseService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		AFD81CDD27D907B800682D74 /* Components */ = {
@@ -307,19 +342,28 @@
 			files = (
 				AFAEABBA27D770F900496500 /* RegisterView.swift in Sources */,
 				AFAEABC427D79B5400496500 /* AuthError.swift in Sources */,
+				AFCFC0B82878254300B01C13 /* UserType.swift in Sources */,
 				AFAEABB227D51C3200496500 /* Button.swift in Sources */,
 				AFAEAB9827D513B800496500 /* StartViewController.swift in Sources */,
+				AFCFC0BA2878279900B01C13 /* User.swift in Sources */,
 				AFD81CDF27D907DE00682D74 /* BookCell.swift in Sources */,
 				AFAEABBC27D7732300496500 /* RegisterViewController.swift in Sources */,
+				AFCFC0AD2875EBE400B01C13 /* PresentContentViewController.swift in Sources */,
+				AFCFC0B62878238C00B01C13 /* AuthService.swift in Sources */,
 				AFD81CE127D90A6E00682D74 /* BooksViewController.swift in Sources */,
+				AFCFC0BE28875F7600B01C13 /* SegmentedControl.swift in Sources */,
+				AFCFC0AF2875EC9800B01C13 /* PresentContentView.swift in Sources */,
 				AFAEABAD27D51AE600496500 /* StartView.swift in Sources */,
 				AFAEABAB27D51A7C00496500 /* TabBarController.swift in Sources */,
 				AFD81CDC27D905E200682D74 /* BooksView.swift in Sources */,
 				AFAEABB427D51CF300496500 /* FontsLibrary.swift in Sources */,
 				AFAEABB627D51F8400496500 /* StackView.swift in Sources */,
+				AFCFC0B32875FF5400B01C13 /* StringsLibrary.swift in Sources */,
 				AFD81D0C27DE601C00682D74 /* SectionHeader.swift in Sources */,
 				AFD81CE327D90EC700682D74 /* BookModel.swift in Sources */,
+				AFCFC0B12875FEA900B01C13 /* PresentPageViewController.swift in Sources */,
 				AFAEABC027D7807E00496500 /* Alerts.swift in Sources */,
+				AFCFC0BC28782F3100B01C13 /* DatabaseService.swift in Sources */,
 				AFAEABB027D51B1C00496500 /* TextField.swift in Sources */,
 				AFD81CE527D90F8B00682D74 /* BookNetManager.swift in Sources */,
 				AFAEAB9427D513B800496500 /* AppDelegate.swift in Sources */,

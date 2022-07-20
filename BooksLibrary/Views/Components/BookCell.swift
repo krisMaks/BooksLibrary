@@ -10,9 +10,9 @@ import PinLayout
 
 class BookCell: UICollectionViewCell {
     static let reuseID = "BookCell"
-    let titleLabel = UILabel(text: "", font: FontsLibrary.labelCell)
-    let ageLabel = UILabel(text: "", font: FontsLibrary.labelCell)
-    let imageBook = UIImageView(image: UIImage(named: "BOOKS"))
+    let titleLabel = UILabel(text: "", font: FontsLibrary.labelCell, alignment: .left)
+    let ageLabel = UILabel(text: "", font: FontsLibrary.labelCell, alignment: .left)
+    let imageBook = UIImageView(image: UIImage(named: "book"))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,8 +24,6 @@ class BookCell: UICollectionViewCell {
         addSubview(imageBook)
         addSubview(titleLabel)
         addSubview(ageLabel)
-        
-        titleLabel.textAlignment = .center
         ageLabel.pin.bottomCenter().sizeToFit()
         titleLabel.pin.bottomCenter(to: ageLabel.anchor.topCenter).width(of: self).height(20)
         imageBook.pin.above(of: titleLabel).top().left().right()
